@@ -5,7 +5,7 @@
 
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
-    if(isset($_POST['login'])) {
+    if(isset($_POST['sign-in'])) {
         $email_signin        = $_POST['email'];
         $password_signin     = $_POST['password'];
 
@@ -23,6 +23,7 @@
 
         if(!empty($email_signin) && !empty($password_signin)){
             // Check if email exist
+            echo "Test";
             if($rowCount <= 0) {
                 $accountNotExistErr = '<div class="alert alert-danger">
                         User account does not exist.
@@ -95,10 +96,5 @@
         }
 
     }
-            echo $wrongPwdErr;
-            echo $accountNotExistErr;
-            echo $emailPwdErr;
-            echo $verificationRequiredErr
-
 
 ?>

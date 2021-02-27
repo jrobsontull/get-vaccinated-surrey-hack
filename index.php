@@ -38,7 +38,7 @@
 
 <div class="central-panel">
 	<div id="register-div">
-		<form id="registration" method="post" action="controllers/usersignup.php">
+		<form id="registration" method="post" action="">
 			<div class="center-row-item">
 				<div class="box-header">Sign up</div>
 			</div>
@@ -295,11 +295,9 @@
 		</div>
 			<?php echo $success_msg; ?>
 			<?php echo $email_exist; ?>
-			<?php echo $email_verify_err; ?>
-			<?php echo $email_verify_success; ?>
 	</div>
 	<div id="login">
-		<form id="sign-in" method="post" action="controllers/usersignin.php">
+		<form id="sign-in" method="post" action="">
 			<div class="center-row-item"><div class="box-header">Sign in</div></div>
 			<div class="form-row">
 				<label class="">Email address</label>
@@ -318,6 +316,10 @@
 			<div class="center-row-item">
 				<button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
 			</div>
+			<?php echo $wrongPwdErr; ?>
+			<?php echo $accountNotExistErr; ?>
+			<?php echo $emailPwdErr; ?>
+			<?php echo $verificationRequiredErr; ?>
 		</form>
 
 <!-- Add logic in JS to index.php for login page for regex -->

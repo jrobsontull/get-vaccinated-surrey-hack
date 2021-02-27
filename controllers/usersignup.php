@@ -3,7 +3,7 @@
     include('../config/usersdb.php');
     
     // Error & success messages
-    global $success_msg, $email_exist, $email_verify_err, $email_verify_success;
+    global $success_msg, $email_exist;
     
     // Set empty form vars for validation mapping
     $_first_name = $_last_name = $_email = $_phone = $_password = $_birth_date =  "";
@@ -62,8 +62,4 @@
         } 
 }
 }
-echo $success_msg;
-echo $email_exist;
-echo $email_verify_err;
-echo $email_verify_success;
 ?>
