@@ -31,22 +31,37 @@
 <div class="my-account-page">
     <div class="nav-bar">
         <div class="option-boxes">
-            <div id="personal" class="selected" onclick="navigate(this)"><p>Change personal details</p><span class="arrow"></span></div>
+            <div id="vaccine-slot" class="selected" onclick="navigate(this)"><p>Vaccine slots</p><span class="arrow"></span></div>
             <div id="vaccine-centre" onclick="navigate(this)"><p>Change vaccine centre</p><span class="arrow"></span></div>
-            <div id="vaccine-slot" onclick="navigate(this)"><p>Vaccine slots</p><span class="arrow"></span></div>
+            <div id="personal" onclick="navigate(this)"><p>Change personal details</p><span class="arrow"></span></div>
         </div>
     </div>
     <div class="options-display">
+        <div class="vaccine-slot">
+            <p>more settings here</p>
+        </div>
+        <div class="vaccine-centre">
+            <p>settings here</p>
+        </div>
         <div class="personal">
             <form id="personal-details" method="post" action="">
-                <label>Email address</label>
-                <input type="email" class="form-control" placeholder="name@example.com">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="name@example.com">
-                <label>First name</label>
-                <input type="text" class="form-control">
-                <label>Last name</label>
-                <input type="text" class="form-control">
+                <div class="form-row">
+                    <label>Email address</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="form-row">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="form-row">
+                    <label>First name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-row">
+                    <label>Last name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-row">
                 <label>Address</label>
                 <input type="text" class="form-control" placeholder="Street address">
                 <input type="text" class="form-control" placeholder="Apt, building, etc">
@@ -63,14 +78,11 @@
                 <label class="form-check-label" for="emailAlert">Email</label>
                 <input type="checkbox" class="form-check-input" id="textAlert">
                 <label class="form-check-label" for="textAlert">Text message</label>
-                <button type="button" class="btn btn-outline-primary">Save changes</button>
+                <button type="submit" class="btn btn-outline-primary">Save changes</button>
             </form>
-        </div>
-        <div class="vaccine-centre">
-            <p>settings here</p>
-        </div>
-        <div class="vaccine-slot">
-            <p>more settings here</p>
+            <form name="delete" method="post" action="" onsumbit="">
+                <button type="submit" class="btn btn-outline-danger">Delete account</button>
+            </form>
         </div>
     </div>
 </div>
