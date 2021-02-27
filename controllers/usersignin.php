@@ -17,10 +17,6 @@
 
         // If query fails, show the reason 
         if(!$query){
-                       echo "<div class='alert alert-danger'>
-                                Either email or password is incorrect.
-                            </div>";
-                        echo $query;
            die("SQL query failed: " . mysqli_error($usersdb));
 
         }
@@ -42,6 +38,7 @@
         			$addressl2     = $row["addressl2"];
         			$addressCity   = $row["addressCity"];
         			$addressPostcode = $row["addressPostcode"];
+                    $addressCounty = $row["addressCounty"];
         			$addressCountry = $row["addressCountry"];
                     $phone   	   = $row['phone'];
                     $password1      = $row['password'];
@@ -66,6 +63,7 @@
                     $_SESSION["addressl2"] = $addressl2;
                     $_SESSION["addressCity"] = $addressCity;
                     $_SESSION["addressPostcode"] = $addressPostcode;
+                    $_SESSION["addressCounty"] = $addressCounty
                     $_SESSION["addressCountry"] = $addressCountry;
                     $_SESSION['phone'] = $phone;
                     $_SESSION['password'] = $password;

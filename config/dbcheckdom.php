@@ -16,7 +16,12 @@ if ($usersdb->connect_error) {
   <td>First Name</td>
   <td>Surname</td>
   <td>Email</td>
-  <td>Address</td>
+  <td>Address L1</td>
+  <td>Address L2</td>
+  <td>City</td>
+  <td>Postcode</td>
+  <td>County</td>
+  <td>Country</td>
   <td>Phone</td>
   <td>Password</td>
   <td>Birth Date</td>
@@ -36,7 +41,12 @@ while ($row = mysqli_fetch_array($query)) {
     <td>{$row['firstName']}</td>
     <td>{$row['lastName']}</td>
     <td>{$row['email']}</td>
-    <td>{$row['address']}</td>
+    <td>{$row['addressl1']}</td>
+    <td>{$row['addressl2']}</td>
+    <td>{$row['addressCity']}</td>
+    <td>{$row['addressPostcode']}</td>
+    <td>{$row['addressCounty']}</td>
+    <td>{$row['addressCountry']}</td>
     <td>{$row['phone']}</td>
     <td>{$row['password']}</td>
     <td>{$row['birthDate']}</td>
