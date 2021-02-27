@@ -14,29 +14,40 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link href="assets/css/index.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
     <link href="assets/css/footer.css" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     
     <title>Verification</title>
 </head>
 <body>
+<div class="container-div">
+<!--Header nav-->
+<nav class="nav-head">
+    <div class="brand-logo"><span class="brand-bold">Get</span>Vaccinated</div>
+    <div class="login-link"><a href="">Sign in</a></div>
+</nav>
+<!--End header nav-->
 
-    <div class="container">
-        <div class="jumbotron text-center">
-            <h1 class="display-4">Email Validation</h1>
-            <div class="col-12 mb-5 text-center">
+<div class="vertical-center verification">
+	<div class="central-panel">
+		<div class="center-row-item">
+			<div class="box-header">Account Verification</div>
+		</div>
                 <?php echo $email_already_verified; ?>
                 <?php echo $email_verified; ?>
                 <?php echo $activation_error; ?>
-            </div>
-            <p class="lead">If user account is verified then click on the following button to login.</p>
-            <a class="btn btn-lg btn-success" href="./index.php"
-               >Click to Login
-            </a>
-        </div>
+	</div>
+    <!--Move to PHP eventually-->
+    <div class="footer">
+        <ul>
+            <li>About Us</li>
+            <li>Report an Issue</li>
+            <li>Support Us</li>
+            <li>Share</li>
+        </ul>
     </div>
-
-
+</div>
+</div>
 </body>
-
 </html>
