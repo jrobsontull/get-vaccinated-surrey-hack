@@ -3,6 +3,8 @@
 
 
 global $fnameupdate, $fnamefail, $fnamenomatch;
+//init variables
+$id = $firstName = $lastName = $email = $addressl1 = $addressl2 = $addressCity = $addressCity = $phone = "";
      
      if(isset($_POST['save-changes']))
  {
@@ -11,38 +13,39 @@ global $fnameupdate, $fnamefail, $fnamenomatch;
     $lastName=$_POST['lastName'];
     $email=$_POST['email'];
     $addressl1=$_POST['addressl1'];
-    $addressl2=$_POST['addressl2'];
     $addressCity=$_POST['addressCity'];
     $addressCounty=$_POST['addressCounty'];
     $phone=$_POST['phone'];
-    $currentPassword = $_POST['currentPassword'];
-    $newPassword = $_POST['newPassword1'];
-    $newPassword2 = $_POST['newPassword2'];
-    $select= "select * from users where id='$id'";
+    $token=$_SESSION['token']; //returns extra " for some reason. Issue affects ALL variables you place after where, including ID and email
+
+    $select= "SELECT * from users where id='$id'";
     $sql = mysqli_query($usersdb,$select);
     $row = mysqli_fetch_assoc($sql);
     $res= $row['id'];
     if($res === $id)
     {
-   
-       $update = "update users set firstName='$fname',lastName='$lastName',email='$email' where id='$id'";
+       $update = "UPDATE users set firstName='$firstName' ,lastName='$lastName', email='$email', addressl1='$addressl1', addressCity='$addressCity', addressCounty='$addressCounty', phone='$phone' WHERE token='$token'"; //bit after WHERE returns extra ", so SQL will not pass.
        $sql2=mysqli_query($usersdb,$update);
+       echo $update;
 if($sql2)
        { 
            /*Successful*/
-           $fnameupdate = echo "Update successful";
+           $fnameupdate = "Update successful";
        }
        else
        {
-       	   $fnamefail = echo "Failed";
-           /*sorry your profile is not update*/
+       	//   $fnamefail = "Failed ";
+           /*Profile not updated*/
        }
     }
     else
     {
-    	$fnamenomatch = echo "Session Expired. Please log in again";
+    	$fnamenomatch = "Session Expired. Please log in again";
         /*sorry your id is not match*/
         header('location:/myaccount.php');
     }
- }
+}
+echo $fnameupdate;
+echo $fnamefail;
+echo $fnamenomatch;
 ?>

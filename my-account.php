@@ -1,7 +1,6 @@
 <?php include('./config/usersdb.php');
 include('./controllers/usersettingsupdate.php');
 
-session_start();
 if (!isset($_SESSION['id']))
 {
     header("Location: ./sign-in.php");
@@ -52,7 +51,7 @@ if (!isset($_SESSION['id']))
             <p>settings here</p>
         </div>
         <div class="personal">
-            <form id="personal-details" method="post" action="">
+            <form id="personal-details" method="post" action="controllers/usersettingsupdate.php">
                 <div class="form-row">
                      <?php echo $fnameupdate;?>
                      <?php echo $fnamefail;?>
@@ -85,7 +84,7 @@ if (!isset($_SESSION['id']))
                 <label class="form-check-label" for="emailAlert">Email</label>
                 <input type="checkbox" class="form-check-input" id="textAlert">
                 <label class="form-check-label" for="textAlert">Text message</label>
-                <button type="submit" class="btn btn-outline-primary">Save changes</button>
+                <button type="submit" name="save-changes"class="btn btn-outline-primary">Save changes</button>
             </form>
             <form name="delete" method="post" action="" onsumbit="">
                 <button type="submit" class="btn btn-outline-danger">Delete account</button>
