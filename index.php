@@ -47,6 +47,7 @@
 					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page" id="floatingEmail" placeholder="name@example.com" onblur="validateLostFocus(this)">
 					<label for="floatingEmail">Email address</label>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+								<?php echo $email_exist; ?>
 				</div>
 				<div class="form-row form-floating">
 		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password-first-page" placeholder="Password" onblur="validateLostFocus(this)">
@@ -294,7 +295,6 @@
 			<p>Already registered? Sign in <span class="login-txt" onclick="loginPage()">here</span></p>
 		</div>
 			<?php echo $success_msg; ?>
-			<?php echo $email_exist; ?>
 	</div>
 	<div id="login">
 		<form id="sign-in" method="post" action="">
