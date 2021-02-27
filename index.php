@@ -38,7 +38,7 @@
 
 <div class="central-panel">
 	<div id="register-div">
-		<form id="registration" method="post" action="controllers/signup.php">
+		<form id="registration" method="post" action="controllers/usersignup.php">
 			<div class="center-row-item">
 				<div class="box-header">Sign up</div>
 			</div>
