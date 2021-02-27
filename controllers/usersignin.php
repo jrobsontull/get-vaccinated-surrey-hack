@@ -41,14 +41,14 @@
         			$addressPostcode = $row["addressPostcode"];
         			$addressCountry = $row["addressCountry"];
                     $phone   	   = $row['phone'];
-                    $password      = $row['password'];
+                    $password1      = $row['password'];
                     $birthDate	   = $row['birthDate'];
                     $token         = $row['token'];
                     $is_active     = $row['is_active'];
                 }
 
                 // Verify password
-                $password = password_verify($password_signin, $password);
+                $password = password_verify($password_signin, $password1);
 
                 // Allow only verified user
                 if($is_active == '1') {
