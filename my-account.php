@@ -1,4 +1,5 @@
 <?php include('./config/usersdb.php');
+include('./controllers/usersettingsupdate.php');
 
 session_start();
 if (!isset($_SESSION['id']))
@@ -54,32 +55,28 @@ if (!isset($_SESSION['id']))
             <form id="personal-details" method="post" action="">
                 <div class="form-row">
                     <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="name@example.com" value ="<?php echo $_SESSION['email'];?>">
-                </div>
-                <div class="form-row">
-                    <label>Password</label>
-                    <input type="password" class="form-control">
+                    <input type="email" name="email" class="form-control" placeholder="name@example.com" value ="<?php echo $_SESSION['email'];?>">
                 </div>
                 <div class="form-row">
                     <label>First name</label>
-                    <input type="text" class="form-control" value ="<?php echo $_SESSION['firstName'];?>">
+                    <input type="text" class="form-control" name="firstName" value ="<?php echo $_SESSION['firstName'];?>">
                 </div>
                 <div class="form-row">
                     <label>Last name</label>
-                    <input type="text" class="form-control" value ="<?php echo $_SESSION['lastName'];?>">
+                    <input type="text" class="form-control" name="lastName" value ="<?php echo $_SESSION['lastName'];?>">
                 </div>
                 <div class="form-row">
                     <label>Address</label>
-                    <input type="text" class="form-control" placeholder="Street address" value ="<?php echo $_SESSION['addressl1'];?>">
-                    <input type="text" class="form-control" placeholder="Apt, building, etc" value ="<?php echo $_SESSION['addressl2'];?>">
-                    <input type="text" class="form-control" placeholder="City" value ="<?php echo $_SESSION['addressCity'];?>">
-                    <select type="text" class="form-control" value ="<?php echo $_SESSION['addressCounty'];?>">
+                    <input type="text" class="form-control" placeholder="Street address" name="addressl1" value ="<?php echo $_SESSION['addressl1'];?>">
+                    <input type="text" class="form-control" name="addressl2" placeholder="Apt, building, etc" value ="<?php echo $_SESSION['addressl2'];?>">
+                    <input type="text" class="form-control" placeholder="City" name="addressCity" value ="<?php echo $_SESSION['addressCity'];?>">
+                    <select type="text" name="addressCounty" class="form-control" value ="<?php echo $_SESSION['addressCounty'];?>">
                         <option>County</option>
                     </select>
                 </div>
-                <input type="text" class="form-control" placeholder="Country" value ="<?php echo $_SESSION['addressCountry'];?>">
+                <input type="text" class="form-control" placeholder="Country" name="addressCountry" value ="<?php echo $_SESSION['addressCountry'];?>">
                 <label>Mobile</label>
-                <input type="text" class="form-control" value="<?php echo $_SESSION['phone'];?>">
+                <input type="text" class="form-control" name="phone" value="<?php echo $_SESSION['phone'];?>">
                 <label>Alerts</label>
                 <input type="checkbox" class="form-check-input" id="emailAlert">
                 <label class="form-check-label" for="emailAlert">Email</label>
@@ -105,7 +102,7 @@ if (!isset($_SESSION['id']))
                     <label>Repeat new password</label>
                     <input name="new-pass-2" type="password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-outline-primary">Save changes</button>
+                <button type="submit" name="save-changes" class="btn btn-outline-primary">Save changes</button>
             </form>
         </div>
     </div>
