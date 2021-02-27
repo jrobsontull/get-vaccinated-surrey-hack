@@ -1,3 +1,11 @@
+<?php include('./config/usersdb.php');
+
+if (!isset($_SESSION['id']))
+{
+    header("Location: ./sign-in.php");
+    die();
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,6 +53,7 @@
             <form id="personal-details" method="post" action="">
                 <div class="form-row">
                     <label>Email address</label>
+                    <?php echo $_SESSION['email']; ?>
                     <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
                 <div class="form-row">
