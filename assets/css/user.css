@@ -60,6 +60,6 @@
 	padding: 30px 50px;
 }
 
-.vaccine-centre, .personal {
+.vaccine-centre, .personal, .change-password {
 	display: none;
 }

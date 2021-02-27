@@ -22,6 +22,8 @@ function navigate(nav_to_bar) {
 			$('.vaccine-centre').fadeIn();
 		} else if (to_nav_to_bar.attr('id') == 'vaccine-slot') {
 			$('.vaccine-slot').fadeIn();
+		} else if (to_nav_to_bar.attr('id') == 'change-password') {
+			$('.change-password').fadeIn();
 		}
 	});
 }
