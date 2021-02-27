@@ -299,7 +299,7 @@
 			<?php echo $email_verify_success; ?>
 	</div>
 	<div id="login">
-		<form id="sign-in" method="post" action="controllers/signin.php">
+		<form id="sign-in" method="post" action="controllers/usersignin.php">
 			<div class="center-row-item"><div class="box-header">Sign in</div></div>
 			<div class="form-row">
 				<label class="">Email address</label>
@@ -319,6 +319,11 @@
 				<button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
 			</div>
 		</form>
+			<?php echo $wrongPwdErr; ?>
+			<?php echo $accountNotExistErr; ?>
+			<?php echo $emailPwdErr; ?>
+			<?php echo $verificationRequiredErr; ?>
+<!-- Add logic in JS to index.php for login page for regex -->
 		<div class="center-row-item form-row"><p>Back to <span class="login-txt" onclick="backToRegister()">registration</span></p></div>
 	</div>
 
