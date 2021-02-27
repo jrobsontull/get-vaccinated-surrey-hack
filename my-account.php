@@ -60,6 +60,7 @@ if (!isset($_SESSION['id']))
                 <div class="form-row">
                     <label>First name</label>
                     <input type="text" class="form-control" name="firstName" value ="<?php echo $_SESSION['firstName'];?>">
+                    <?php echo $fnameupdate;?>
                 </div>
                 <div class="form-row">
                     <label>Last name</label>

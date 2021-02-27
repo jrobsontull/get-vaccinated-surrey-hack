@@ -20,7 +20,7 @@ $token = $_SESSION['token'];
         $phone         = $_POST["phone"];
 //        $birthDate     = $_POST["dob-hidden"];
 
-  if(!empty($firstName) or !empty($lastName) or !empty($email) or !empty($addressl1) or !empty($addressCity) or !empty($addressPostcode) or !empty($addressCountry) or !empty($password or !empty($phone) or !empty($password)){
+  if(!empty($firstName) || !empty($lastName) || !empty($email) || !empty($addressl1) || !empty($addressCity) || !empty($addressPostcode) || !empty($addressCountry) || !empty($password) || !empty($phone) || !empty($password)){
 
 if($firstName != $_SESSION['firstName']){
         $update = mysqli_query($usersdb, "UPDATE users SET firstName = '".$_SESSION['firstName']."' WHERE '".$_SESSION['token']."' = '$token' ");
@@ -29,7 +29,6 @@ if($firstName != $_SESSION['firstName']){
                        }else{
  
                        }
-}
 }
 }
   /*      $email_check_query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email}' ");
