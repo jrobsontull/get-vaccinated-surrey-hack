@@ -3,20 +3,31 @@
     include('../config/usersdb.php');
     
     // Error & success messages
-    global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr;
-    global $fNameEmptyErr, $lNameEmptyErr, $emailEmptyErr, $mobileEmptyErr, $passwordEmptyErr, $birthDateEmptyErr, $addressEmptyErr, $email_verify_err, $email_verify_success;
+    global $success_msg, $email_exist, $email_verify_err, $email_verify_success;
     
     // Set empty form vars for validation mapping
-    $_first_name = $_last_name = $_email = $_phone = $_password = $_address = $_birth_date =  "";
+    $_first_name = $_last_name = $_email = $_phone = $_password = $_birth_date =  "";
 
     if(isset($_POST["register"])) {
         $firstName     = $_POST["f-name-hidden"];
         $lastName      = $_POST["l-name-hidden"];
         $email         = $_POST["email-hidden"];
-        $address       = $_POST["address-hidden"];
+        $addressl1     = $_POST["address-l1-hidden"];
+        $addressl2     = $_POST["address-l2-hidden"];
+        $addressCity   = $_POST["address-city-hidden"];
+        $addressPostcode = $_POST["address-postcode-hidden"];
+        $addressCountry = $_POST["address-country-hidden"]
         $phone         = $_POST["mobile-hidden"];
         $password      = $_POST["password-hidden"];
         $birthDate     = $_POST["dob-hidden"];
+
+                <input type="hidden" name="address-l1-hidden">
+                <input type="hidden" name="address-l2-hidden">
+                <input type="hidden" name="address-city-hidden">
+                <input type="hidden" name="address-county-hidden">
+                <input type="hidden" name="address-postcode-hidden">
+                <input type="hidden" name="address-country-hidden">
+
 
         // check if email already exist
         $email_check_query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email}' ");
@@ -24,8 +35,8 @@
 
 
         // PHP validation
-        // Verify if form values are not empty
-        if(!empty($firstName) && !empty($lastName) && !empty($email) && !empty($phone) && !empty($password) && !empty($address) && !empty($birthDate)){
+        // Verify if form values are not empty - leaving out address, do not know what is required.
+        if(!empty($firstName) && !empty($lastName) && !empty($email) && !empty($phone) && !empty($password) && !empty($birthDate)){
             
             // check if user email already exist
             if($rowCount > 0) {
@@ -42,8 +53,8 @@
                     // Password hash
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
                     // Query 
-                    $sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
-                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$phone}', '{$password_hash}', '{$birthDate}',
+                    $sql = "INSERT INTO users (firstName, lastName, email, addressl1, addressl2, addressCity, addressCounty, addressPostcode, addressCountry, phone, password, birthDate, token, is_active,
+                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$addressl1}', '{$addressl2}', '{$addressCity}', '{$addressCounty}', '{$addressPostcode}', '{$addressCountry}', '{$phone}', '{$password_hash}', '{$birthDate}',
                     '{$token}', '0', now())";
                     // Create mysql query
                     $sqlQuery = mysqli_query($usersdb, $sql);
@@ -59,6 +70,7 @@
         } 
 }
 }
+echo $success_msg;
 echo $email_exist;
 echo $email_verify_err;
 echo $email_verify_success;
