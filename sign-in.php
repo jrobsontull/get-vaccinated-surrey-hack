@@ -39,17 +39,17 @@
             </div>
             <form id="sign-in" method="post" action="">
                 <div class="form-row form-floating">
-                    <input type="email" class="form-control" aria-describedby="emailHelp" name="forgot-pass-email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" name="email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
                     <label for="floatingEmail">Email address</label>
                     <div id="emailHelp" class="form-text">Type a valid email here.</div>
                 </div>
                 <div class="form-row form-floating">
-		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password-first-page" placeholder="Password" onblur="validateLostFocus(this)">
+		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password" placeholder="Password" onblur="validateLostFocus(this)">
 		    		<label for="floatingPass">Password</label>
-		    		<div id="passwordHelpBlock" class="form-text">Type you password here.</div>
+		    		<div id="passwordHelpBlock password" class="form-text">Type you password here.</div>
 				</div>
                 <div class="form-row center-row-item">
-                <button type="submit" name="submit" class="btn btn-outline-primary btn-block">Submit</button>
+                <button type="submit" name="sign-in" class="btn btn-outline-primary btn-block">Submit</button>
                 </div>
             <?php echo $wrongPwdErr; ?>
             <?php echo $accountNotExistErr; ?>

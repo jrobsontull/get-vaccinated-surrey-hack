@@ -1,7 +1,7 @@
 <?php
    
     // Database usersdb
-    include('../config/usersdb.php');
+    include('./config/usersdb.php');
 
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
@@ -10,20 +10,24 @@
         $password_signin     = $_POST['password'];
 
         // clean data happens in JS 
+        echo getcwd();
 
         // Query if email exists in db
-        $sql = "SELECT * From users WHERE email = '{$email_signin}' ";
-        $query = mysqli_query($usersdb, $sql);
+        $query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email_signin}' ");
         $rowCount = mysqli_num_rows($query);
 
         // If query fails, show the reason 
         if(!$query){
+                       echo "<div class='alert alert-danger'>
+                                Either email or password is incorrect.
+                            </div>";
+                        echo $query;
            die("SQL query failed: " . mysqli_error($usersdb));
+
         }
 
         if(!empty($email_signin) && !empty($password_signin)){
             // Check if email exist
-            echo "Test";
             if($rowCount <= 0) {
                 $accountNotExistErr = '<div class="alert alert-danger">
                         User account does not exist.
@@ -82,22 +86,19 @@
             }
 
         } else {
-            if(empty($email)){
+            if(empty($email_signin)){
                 $email_empty_err = "<div class='alert alert-danger email_alert'>
                             Email not provided.
                     </div>";
             }
             
-            if(empty($password)){
+            if(empty($password_signin)){
                 $pass_empty_err = "<div class='alert alert-danger email_alert'>
                             Password not provided.
                         </div>";
             }            
         }
-            echo $wrongPwdErr;
-            echo $accountNotExistErr;
-            echo $emailPwdErr;
-            echo $verificationRequiredErr;
+
     }
 
 ?>
