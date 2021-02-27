@@ -1,26 +1,24 @@
 <?php
    
-    // Database connection
+    // Database usersdb
     include('../config/usersdb.php');
 
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
     if(isset($_POST['login'])) {
-        $email_signin        = $_POST['email_signin'];
-        $password_signin     = $_POST['password_signin'];
+        $email_signin        = $_POST['email'];
+        $password_signin     = $_POST['password'];
 
-        // clean data 
-        $user_email = filter_var($email_signin, FILTER_SANITIZE_EMAIL);
-        $pswd = mysqli_real_escape_string($connection, $password_signin);
+        // clean data happens in JS 
 
         // Query if email exists in db
         $sql = "SELECT * From users WHERE email = '{$email_signin}' ";
-        $query = mysqli_query($connection, $sql);
+        $query = mysqli_query($usersdb, $sql);
         $rowCount = mysqli_num_rows($query);
 
         // If query fails, show the reason 
         if(!$query){
-           die("SQL query failed: " . mysqli_error($connection));
+           die("SQL query failed: " . mysqli_error($usersdb));
         }
 
         if(!empty($email_signin) && !empty($password_signin)){
@@ -49,7 +47,7 @@
                 }
 
                 // Verify password
-                $password = password_verify($password_signin, $pass_word);
+                $password = password_verify($password_signin, $password);
 
                 // Allow only verified user
                 if($is_active == '1') {
@@ -97,5 +95,10 @@
         }
 
     }
+            echo $wrongPwdErr;
+            echo $accountNotExistErr;
+            echo $emailPwdErr;
+            echo $verificationRequiredErr
+
 
 ?>
