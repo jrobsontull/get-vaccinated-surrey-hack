@@ -1,5 +1,7 @@
 <?php include('./config/usersdb.php');
 include('./controllers/usersettingsupdate.php');
+include('./controllers/userschangepassword.php');
+
 
 if (!isset($_SESSION['id']))
 {
@@ -93,10 +95,6 @@ if (!isset($_SESSION['id']))
         <div class="change-password">
             <form name="change-pass" method="post" action="" onsumbit="">
                 <div class="form-row">
-                    <label>Current password</label>
-                    <input name="current-pass" type="password" class="form-control">
-                </div>
-                <div class="form-row">
                     <label>New password</label>
                     <input name="new-pass-1" type="password" class="form-control">
                 </div>
@@ -104,7 +102,11 @@ if (!isset($_SESSION['id']))
                     <label>Repeat new password</label>
                     <input name="new-pass-2" type="password" class="form-control">
                 </div>
-                <button type="submit" name="save-changes" class="btn btn-outline-primary">Save changes</button>
+                <button type="submit" name="update-pass" class="btn btn-outline-primary">Save changes</button>
+                     <?php echo $pwdSuccess;?>
+                     <?php echo $pwdfailed;?>
+                    <?php echo $pwdnomatch;?>
+                    <?php echo $pwdSame;?>
             </form>
         </div>
     </div>
