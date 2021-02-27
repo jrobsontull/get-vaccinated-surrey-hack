@@ -35,14 +35,14 @@
                     $lastName      = $row['lastName'];
                     $email         = $row['email'];
                     $addressl1     = $row["addressl1"];
-        			$addressl2     = $row["addressl2"];
-        			$addressCity   = $row["addressCity"];
-        			$addressPostcode = $row["addressPostcode"];
+                    $addressl2     = $row["addressl2"];
+                    $addressCity   = $row["addressCity"];
+                    $addressPostcode = $row["addressPostcode"];
                     $addressCounty = $row["addressCounty"];
-        			$addressCountry = $row["addressCountry"];
-                    $phone   	   = $row['phone'];
+                    $addressCountry = $row["addressCountry"];
+                    $phone         = $row['phone'];
                     $password1      = $row['password'];
-                    $birthDate	   = $row['birthDate'];
+                    $birthDate     = $row['birthDate'];
                     $token         = $row['token'];
                     $is_active     = $row['is_active'];
                 }
@@ -63,7 +63,7 @@
                     $_SESSION["addressl2"] = $addressl2;
                     $_SESSION["addressCity"] = $addressCity;
                     $_SESSION["addressPostcode"] = $addressPostcode;
-                    $_SESSION["addressCounty"] = $addressCounty
+                    $_SESSION["addressCounty"] = $addressCounty;
                     $_SESSION["addressCountry"] = $addressCountry;
                     $_SESSION['phone'] = $phone;
                     $_SESSION['password'] = $password;
