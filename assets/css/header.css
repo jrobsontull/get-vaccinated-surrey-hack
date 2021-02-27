@@ -1,0 +1,52 @@
+.nav-head {
+	height: 60px;
+	background-color: #353b48;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-head div {
+	padding: 10px;
+}
+
+.nav-head div:first-child {
+	margin-left: 8px;
+}
+
+.nav-head div:last-child {
+	margin-right: 8px;
+}
+
+.brand-logo {
+	color: white;
+	font-weight: 500;
+	font-size: 22px;
+}
+
+.brand-bold {
+	font-weight: 700;
+	color: #00a8ff;
+}
+
+.nav-head a {
+	text-decoration: none;
+	color: white;
+	transition: all 0.4s ease;
+	border: 1px solid white;
+	padding: 3px 10px;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+.nav-head a:hover {
+	color: #353b48;
+	background: white;
+}
+
+@media only screen and (max-width: 450px) {
+	.nav-head {
+		min-width: 370px;
+	}
+}

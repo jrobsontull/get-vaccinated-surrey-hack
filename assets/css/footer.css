@@ -1,0 +1,32 @@
+.footer {
+	margin: 20px 0;
+}
+
+.footer ul {
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.footer ul li {
+	text-decoration: none;
+	display: inline-block;
+	padding: 0 8px;
+	transition: transform 0.8s ease;
+	transition: color 0.3s ease;
+}
+
+.footer ul li:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	color: #0d6efd;
+}
+
+@media only screen and (max-width: 450px) {
+	.footer ul {
+		padding: 0 36px;
+	}
+
+}
