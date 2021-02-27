@@ -54,13 +54,15 @@ if (!isset($_SESSION['id']))
         <div class="personal">
             <form id="personal-details" method="post" action="">
                 <div class="form-row">
+                     <?php echo $fnameupdate;?>
+                     <?php echo $fnamefail;?>
+                    <?php echo $fnamenomatch;?>
                     <label>Email address</label>
                     <input type="email" name="email" class="form-control" placeholder="name@example.com" value ="<?php echo $_SESSION['email'];?>">
                 </div>
                 <div class="form-row">
                     <label>First name</label>
                     <input type="text" class="form-control" name="firstName" value ="<?php echo $_SESSION['firstName'];?>">
-                    <?php echo $fnameupdate;?>
                 </div>
                 <div class="form-row">
                     <label>Last name</label>
