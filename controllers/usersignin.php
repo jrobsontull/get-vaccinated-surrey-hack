@@ -94,7 +94,10 @@
                         </div>";
             }            
         }
-
+            echo $wrongPwdErr;
+            echo $accountNotExistErr;
+            echo $emailPwdErr;
+            echo $verificationRequiredErr;
     }
 
 ?>

@@ -38,7 +38,7 @@
 
 <div class="central-panel">
 	<div id="register-div">
-		<form id="registration" method="post" action="">
+		<form id="registration" method="post" action="controllers/usersignup.php">
 			<div class="center-row-item">
 				<div class="box-header">Sign up</div>
 			</div>
@@ -47,7 +47,6 @@
 					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page" id="floatingEmail" placeholder="name@example.com" onblur="validateLostFocus(this)">
 					<label for="floatingEmail">Email address</label>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-								<?php echo $email_exist; ?>
 				</div>
 				<div class="form-row form-floating">
 		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password-first-page" placeholder="Password" onblur="validateLostFocus(this)">
@@ -294,7 +293,7 @@
 		<div class="center-row-item form-row">
 			<p>Already registered? Sign in <span class="login-txt" onclick="loginPage()">here</span></p>
 		</div>
-			<?php echo $success_msg; ?>
+
 	</div>
 	<div id="login">
 		<form id="sign-in" method="post" action="">

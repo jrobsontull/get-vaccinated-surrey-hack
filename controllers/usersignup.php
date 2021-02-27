@@ -62,4 +62,6 @@
         } 
 }
 }
+            echo $success_msg;
+            echo $email_exist;
 ?>
