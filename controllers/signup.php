@@ -16,7 +16,7 @@
         $addressl2     = $_POST["address-l2-hidden"];
         $addressCity   = $_POST["address-city-hidden"];
         $addressPostcode = $_POST["address-postcode-hidden"];
-        $addressCountry = $_POST["address-country-hidden"]
+        $addressCountry = $_POST["address-country-hidden"];
         $phone         = $_POST["mobile-hidden"];
         $password      = $_POST["password-hidden"];
         $birthDate     = $_POST["dob-hidden"];
