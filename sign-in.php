@@ -1,3 +1,5 @@
+<?php include('./controllers/usersignin.php'); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -35,7 +37,7 @@
             <div class="form-row">
                 <p>Sign in to update your contact details, change your local vaccination centre or acccept available vaccination slots.</p>
             </div>
-            <form id="sign-in" method="post" action="" onsubmit="">
+            <form id="sign-in" method="post" action="">
                 <div class="form-row form-floating">
                     <input type="email" class="form-control" aria-describedby="emailHelp" name="forgot-pass-email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
                     <label for="floatingEmail">Email address</label>
@@ -49,6 +51,10 @@
                 <div class="form-row center-row-item">
                 <button type="submit" name="submit" class="btn btn-outline-primary btn-block">Submit</button>
                 </div>
+            <?php echo $wrongPwdErr; ?>
+            <?php echo $accountNotExistErr; ?>
+            <?php echo $emailPwdErr; ?>
+            <?php echo $verificationRequiredErr; ?>
             </form>
         </div>
     </div>
