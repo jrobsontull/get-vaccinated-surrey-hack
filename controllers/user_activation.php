@@ -21,23 +21,18 @@
                   if($is_active == 0) {
                      $update = mysqli_query($usersdb, "UPDATE users SET is_active = '1' WHERE token = '$token' ");
                        if($update){
-                           $email_verified = '<div class="verify-text">
-      <div class="alert alert-success">You have successfully verified your account.</div>
-      <p>You can now sign in if you need to update your contact details, change your local vaccination centre or acccept available vaccination slots.</p>
-    </div>
-                           ';
+                           $email_verified = '<div class="alert alert-success">You have successfully verified your account.</div>
+                           <p>You can now sign in if you need to update your contact details, change your local vaccination centre or acccept available vaccination slots.</p>';
                        }
                   } else {
-                        $email_already_verified = '<div class="alert alert-danger">
-                               User email already verified!
-                            </div>
+                        $email_already_verified = '<div class="alert alert-danger">User email already verified!</div>
+                        <p>You have already activated your user account. You can now click the sign in button to continue to your account.</p>
                         ';
                   }
             }
         } else {
-            $activation_error = '<div class="alert alert-danger">
-                    Activation error!
-                </div>
+            $activation_error = '<div class="alert alert-danger">Activation error!</div>
+            <p>A fatal error occured. Please report the issue with your account.</p>
             ';
         }
     }

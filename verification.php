@@ -34,9 +34,11 @@
 		<div class="center-row-item">
 			<div class="box-header">Account Verification</div>
 		</div>
-                <?php echo $email_already_verified; ?>
-                <?php echo $email_verified; ?>
-                <?php echo $activation_error; ?>
+        <div class="verify-text">
+            <?php echo $email_already_verified; ?>
+            <?php echo $email_verified; ?>
+            <?php echo $activation_error; ?>
+        </div>
 	</div>
     <!--Move to PHP eventually-->
     <div class="footer">
