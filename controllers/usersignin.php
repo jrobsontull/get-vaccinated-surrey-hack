@@ -55,14 +55,20 @@
                 if($is_active == '1') {
                     if($email_signin == $email && $password_signin == $password) {
                        header("Location: ./my-account.html");
-                       
-                       $_SESSION['id'] = $id;
-                       $_SESSION['firstname'] = $firstname;
-                       $_SESSION['lastname'] = $lastname;
-                       $_SESSION['email'] = $email;
-                       $_SESSION['mobilenumber'] = $mobilenumber;
-                       $_SESSION['token'] = $token;
 
+                    $_SESSION['id'] = $id;
+                    $_SESSION['firstName'] = $firstName;
+                    $_SESSION['lastName'] = $lastName;
+                    $_SESSION['email'] = $email;
+                    $_SESSION["addressl1"] = $addressl1;
+                    $_SESSION["addressl2"] = $addressl2;
+                    $_SESSION["addressCity"] = $addressCity;
+                    $_SESSION["addressPostcode"] = $addressPostcode;
+                    $_SESSION["addressCountry"] = $addressCountry;
+                    $_SESSION['phone'] = $phone;
+                    $_SESSION['password'] = $password;
+                    $_SESSION['birthDate'] = $birthDate;
+                    $_SESSION['token'] = $token;
                     } else {
                         $emailPwdErr = '<div class="alert alert-danger">
                                 Either email or password is incorrect.
@@ -77,13 +83,13 @@
             }
 
         } else {
-            if(empty($email_signin)){
+            if(empty($email)){
                 $email_empty_err = "<div class='alert alert-danger email_alert'>
                             Email not provided.
                     </div>";
             }
             
-            if(empty($password_signin)){
+            if(empty($password)){
                 $pass_empty_err = "<div class='alert alert-danger email_alert'>
                             Password not provided.
                         </div>";
