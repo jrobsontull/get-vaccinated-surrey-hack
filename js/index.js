@@ -155,9 +155,9 @@ function validatePass(element) {
 	var pass = passInput.val();
 
 	// Remove ariadescribedby element
-    //if ($('#passwordHelpBlock').css('display') == 'block') {
-    //	$('#passwordHelpBlock').hide();
-    //}
+    if ($('#passwordHelpBlock').css('display') == 'block' && passInput.attr('name') == 'sign-in-pass') {
+    	$('#passwordHelpBlock').hide();
+    }
 
 	// Check if message already and remove
 	if (passInput.next().hasClass("invalid-feedback") || passInput.next().hasClass("valid-feedback")) {

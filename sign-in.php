@@ -44,9 +44,9 @@
                     <div id="emailHelp" class="form-text">Type a valid email here.</div>
                 </div>
                 <div class="form-row form-floating">
-		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password" placeholder="Password" onblur="validateLostFocus(this)">
+		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="sign-in-pass" placeholder="Password" onblur="validatePass(this)">
 		    		<label for="floatingPass">Password</label>
-		    		<div id="passwordHelpBlock password" class="form-text">Type you password here.</div>
+		    		<div id="passwordHelpBlock" class="form-text">Type you password here.</div>
 				</div>
                 <div class="form-row center-row-item">
                 <button type="submit" name="sign-in" class="btn btn-outline-primary btn-block">Submit</button>
