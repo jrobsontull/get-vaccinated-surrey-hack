@@ -21,14 +21,6 @@
         $password      = $_POST["password-hidden"];
         $birthDate     = $_POST["dob-hidden"];
 
-                <input type="hidden" name="address-l1-hidden">
-                <input type="hidden" name="address-l2-hidden">
-                <input type="hidden" name="address-city-hidden">
-                <input type="hidden" name="address-county-hidden">
-                <input type="hidden" name="address-postcode-hidden">
-                <input type="hidden" name="address-country-hidden">
-
-
         // check if email already exist
         $email_check_query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email}' ");
         $rowCount = mysqli_num_rows($email_check_query);
