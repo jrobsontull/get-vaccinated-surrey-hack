@@ -7,7 +7,7 @@
 
     if(isset($_POST['sign-in'])) {
         $email_signin        = $_POST['email'];
-        $password_signin     = $_POST['password'];
+        $password_signin     = $_POST['sign-in-pass'];
 
         // clean data happens in JS 
 
