@@ -23,10 +23,7 @@
 <body>
 <div class="container-div">
 <!--Header nav-->
-<nav class="nav-head">
-    <div class="brand-logo"><span class="brand-bold">Get</span>Vaccinated</div>
-    <div class="login-link signed-in"><a href="">Sign out</a></div>
-</nav>
+<?php include('./header.php'); ?>
 <!--End header nav-->
 <div class="my-account-page">
     <div class="nav-bar">

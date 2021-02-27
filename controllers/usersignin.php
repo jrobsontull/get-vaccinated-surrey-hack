@@ -10,7 +10,6 @@
         $password_signin     = $_POST['password'];
 
         // clean data happens in JS 
-        echo getcwd();
 
         // Query if email exists in db
         $query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email_signin}' ");
@@ -57,7 +56,7 @@
                 // Allow only verified user
                 if($is_active == '1') {
                     if($email_signin == $email && $password_signin == $password) {
-                       header("Location: https://get-vaccinated.uk/my-account.html");
+                       header("Location: /my-account.html");
 
                     $_SESSION['id'] = $id;
                     $_SESSION['firstName'] = $firstName;
