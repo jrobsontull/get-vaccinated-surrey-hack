@@ -56,7 +56,7 @@
                 // Allow only verified user
                 if($is_active == '1') {
                     if($email_signin == $email && $password_signin == $password) {
-                       header("Location: /my-account.html");
+                       header("Location: /my-account.php");
 
                     $_SESSION['id'] = $id;
                     $_SESSION['firstName'] = $firstName;
