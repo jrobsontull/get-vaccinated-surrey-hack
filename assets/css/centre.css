@@ -1,0 +1,33 @@
+.pin-code {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.form-control.digit {
+	width: 50px;
+	height: 60px;
+	margin-right: 0;
+	text-align: center;
+	font-size: 25px;
+}
+
+.form-control.digit:last-child {
+	margin-right: 0;
+}
+
+.form-text.valid-pin {
+	color: #198754;
+}
+
+.form-text.invalid-pin {
+	color: #dc3545;
+}
+
+input.valid-pin {
+	border-color: #dc3545;
+}
+
+input.invalid-pin {
+	border-color: #198754;
+}
