@@ -1,3 +1,7 @@
 RewriteEngine On
+
 RewriteCond %{SERVER_PORT} !=443
 RewriteRule ^(.*)$ https://get-vaccinated.uk/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
