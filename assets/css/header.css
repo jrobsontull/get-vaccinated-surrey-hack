@@ -19,7 +19,7 @@
 	margin-right: 8px;
 }
 
-.brand-logo {
+.brand-logo a {
 	color: white;
 	font-weight: 500;
 	font-size: 22px;
@@ -32,6 +32,14 @@
 
 .nav-head a {
 	text-decoration: none;
+}
+
+.nav-head a:hover {
+	color: white;
+}
+
+.nav-head a#button {
+	text-decoration: none;
 	color: white;
 	transition: all 0.4s ease;
 	border: 1px solid white;
@@ -40,7 +48,7 @@
 	font-size: 16px;
 }
 
-.nav-head a:hover {
+.nav-head a#button:hover {
 	color: #353b48;
 	background: white;
 }

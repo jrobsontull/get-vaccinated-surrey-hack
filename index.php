@@ -215,7 +215,7 @@
 				<label class="">Password</label>
 		    	<input type="password" class="form-control" id="password" aria-describedby="forgot-pass">
 		    	<div id="forgot-pass" class="form-text">
-			    	<a href="#">Forgot password?</a>
+			    	<a href="forgot-password">Forgot password?</a>
 			    </div>
 			</div>
 			<div class="form-row">

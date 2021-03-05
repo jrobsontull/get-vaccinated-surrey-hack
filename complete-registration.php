@@ -1,3 +1,5 @@
+<?php include('./controllers/complete-reg-page.php'); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,38 +36,26 @@
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     
-    <title>Forgot Password</title>
+    <title>Sign Up</title>
 </head>
 <body>
 <div class="container-div">
 <!--Header nav-->
 <nav class="nav-head">
-    <div class="brand-logo"><span class="brand-bold">Get</span>Vaccinated</div>
-    <div class="login-link"><a href="">Sign in</a></div>
+    <div class="brand-logo"><a href="/"><span class="brand-bold">Get</span>Vaccinated</a></div>
+    <div class="login-link"><a href="" id="button">Sign in</a></div>
 </nav>
 <!--End header nav-->
 
 <div class="vertical-center verification">
-    <div class="central-panel">
-        <div class="center-row-item">
-            <div class="box-header">Forgot Password</div>
+	<div class="central-panel">
+		<div class="center-row-item">
+			<div class="box-header"><?php echo $header_txt; ?></div>
+		</div>
+        <div class="verify-text">
+            <?php echo $message; ?>
         </div>
-        <div class="forgot-pass">
-            <div class="form-row">
-                <p>Type the email address for your account here and if an account with this address exists, we will email you with a link to reset your password.</p>
-            </div>
-            <form id="forgot-pass" method="post" action="" onsubmit="isValidForgotPassForm()">
-                <div class="form-row form-floating">
-                    <input type="email" class="form-control" aria-describedby="emailHelp" name="forgot-pass-email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
-                    <label for="floatingEmail">Email address</label>
-                    <div id="emailHelp" class="form-text">Type a valid email here.</div>
-                </div>
-                <div class="form-row center-row-item">
-                <button type="submit" name="forgot-pass" class="btn btn-outline-primary btn-block">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
+	</div>
     <!--Move to PHP eventually-->
     <div class="footer">
         <ul>

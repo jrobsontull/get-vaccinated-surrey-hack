@@ -42,8 +42,8 @@
 <div class="container-div">
 <!--Header nav-->
 <nav class="nav-head">
-    <div class="brand-logo"><span class="brand-bold">Get</span>Vaccinated</div>
-    <div class="login-link"><a href="">Sign in</a></div>
+    <div class="brand-logo"><a href="/"><span class="brand-bold">Get</span>Vaccinated</a></div>
+    <div class="login-link"><a href="sign-in" id="button">Sign in</a></div>
 </nav>
 <!--End header nav-->
 

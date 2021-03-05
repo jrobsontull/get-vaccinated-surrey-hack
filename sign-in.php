@@ -42,7 +42,7 @@
 <div class="container-div">
 <!--Header nav-->
 <nav class="nav-head">
-    <div class="brand-logo"><span class="brand-bold">Get</span>Vaccinated</div>
+    <div class="brand-logo"><a href="/"><span class="brand-bold">Get</span>Vaccinated</a></div>
 </nav>
 <!--End header nav-->
 
@@ -64,7 +64,9 @@
                 <div class="form-row form-floating">
 		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="sign-in-pass" placeholder="Password" onblur="validatePass(this)">
 		    		<label for="floatingPass">Password</label>
-		    		<div id="passwordHelpBlock" class="form-text">Type you password here.</div>
+		    		<div id="forgot-pass" class="form-text">
+                        <a href="forgot-password">Forgot password?</a>
+                    </div>
 				</div>
                 <div class="form-row center-row-item">
                 <button type="submit" name="sign-in" class="btn btn-outline-primary btn-block">Submit</button>

@@ -32,11 +32,12 @@
             
             // check if user email already exist
             if($rowCount > 0) {
-                $email_exist = '
-                    <div class="alert alert-danger" role="alert">
-                        User with email already exists!
-                    </div>
-                ';
+                //$email_exist = '
+                //    <div class="alert alert-danger" role="alert">
+                //        User with email already exists!
+                //    </div>
+                //';
+                header('Location: ./../complete-registration?token=&state=exists');
             } else {
 
                     // Generate random activation token
@@ -55,13 +56,14 @@
                         die("MySQL query failed!" . $sql . mysqli_error($usersdb));
                     } 
                     if($sqlQuery) {
-                        $success_msg = 'Click on the activation link to verify your email. <br><br>
-                          <a href="../verification.php?token='.$token.'"> Click here to verify email</a>
-                        ';
+                        //$success_msg = 'Click on the activation link to verify your email. <br><br>
+                        //  <a href="../verification.php?token='.$token.'"> Click here to verify email</a>
+                        //';
+                        header('Location: ./../complete-registration?token='.$token.'&state=success');
             }
         } 
 }
 }
-            echo $success_msg;
-            echo $email_exist;
+            //echo $success_msg;
+            //echo $email_exist;
 ?>
