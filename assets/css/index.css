@@ -206,7 +206,7 @@ button:disabled {
 /* Smaller screens */
 @media only screen and (max-width: 450px) {
 	div.vertical-center {
-		min-width: 370px;
+		min-width: 330px;
 	}
 	
 	div.intro-text {
@@ -227,7 +227,7 @@ button:disabled {
 
 	div.central-panel {
 		width: 100%;
-		min-width: 370px;
+		min-width: 330px;
 		border-radius: 0;
 	}
 

@@ -55,6 +55,6 @@
 
 @media only screen and (max-width: 450px) {
 	.nav-head {
-		min-width: 370px;
+		min-width: 330px;
 	}
 }

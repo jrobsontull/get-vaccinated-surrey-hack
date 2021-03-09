@@ -63,3 +63,85 @@
 .vaccine-centre, .personal, .change-password {
 	display: none;
 }
+
+.vaccine-slot p {
+	text-align: justify;
+}
+
+.vac-slt-form-btns {
+	height: 400px;
+}
+
+.vaccine-slot button.vac-slot-btn {
+	max-width: 400px;
+	height: 60%;
+	font-size: 1.5em;
+	margin-right: 26px;
+	padding: 6px 20px;
+}
+
+button.vac-slot-btn:last-child {
+	margin-right: 0;
+}
+
+.vac-slot-btn.accept {
+	background-color: #f5faf6;
+}
+
+.vac-slot-btn.deny {
+	background-color: #f5f6fa;
+}
+
+@media only screen and (max-width: 720px) {
+	.vaccine-slot button.vac-slot-btn {
+		font-size: 1.2em;
+		padding: 6px 14px;
+	}
+}
+
+@media only screen and (max-width: 610px) {
+	/* Responsive nav bar mode */
+	.my-account-page {
+		flex-direction: column;
+	}
+
+	.option-boxes {
+		flex-direction: row;
+	}
+
+	.nav-bar {
+		width: 100%;
+	}
+
+	.option-boxes div {
+		flex-direction: column;
+		text-align: center;
+		padding: 20px 12px;
+		border-right: 1px solid #ced4da;
+	}
+
+	.option-boxes div:last-child {
+		border-right: none;
+	}
+
+	.option-boxes p {
+		margin: auto;
+	}
+
+	.arrow {
+		transform: rotate(45deg);
+		margin: 4px 0 0 0;
+	}
+
+	.options-display {
+		width: 100%;
+	}
+
+	.options-display > div {
+		padding: 20px 28px;
+	}
+
+	.vaccine-slot button.vac-slot-btn {
+		height: 40%;
+	}
+}

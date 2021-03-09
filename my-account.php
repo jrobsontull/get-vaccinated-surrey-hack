@@ -65,7 +65,13 @@ if (!isset($_SESSION['id']))
     </div>
     <div class="options-display">
         <div class="vaccine-slot">
-            <p>more settings here</p>
+            <p>You currently have <strong>no available</strong> vaccine slots. Revist this page once you receive an email or text notification of availability.</p>
+            <form name="usr-vac-slot" method="post" action="">
+                <div class="form-row center-row-item vac-slt-form-btns">
+                    <button type="button" class="btn vac-slot-btn btn-outline-success accept btn-block" disabled>Confirm appointment</button>
+                    <button type="button" class="btn btn-outline-secondary vac-slot-btn deny btn-block" disabled>Not available</button>
+                </div>
+            </form>
         </div>
         <div class="vaccine-centre">
             <p>settings here</p>
