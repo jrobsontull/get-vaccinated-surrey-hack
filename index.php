@@ -205,15 +205,15 @@
 
 	</div>
 	<div id="login">
-		<form id="sign-in" method="post" action="">
+		<form id="sign-in" method="post" action="controllers/usersignin.php">
 			<div class="center-row-item"><div class="box-header">Sign in</div></div>
 			<div class="form-row">
 				<label class="">Email address</label>
-				<input type="email" class="form-control">
+				<input type="email" name="sign-in-email" class="form-control">
 			</div>
 			<div class="form-row">
 				<label class="">Password</label>
-		    	<input type="password" class="form-control" id="password" aria-describedby="forgot-pass">
+		    	<input type="password" name="sign-in-pass" class="form-control" id="password" aria-describedby="forgot-pass">
 		    	<div id="forgot-pass" class="form-text">
 			    	<a href="forgot-password">Forgot password?</a>
 			    </div>
@@ -222,7 +222,7 @@
 			     <div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 			</div>
 			<div class="center-row-item">
-				<button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
+				<button type="submit" name="sign-in" class="btn btn-outline-primary btn-block">Log in</button>
 			</div>
 			<?php echo $wrongPwdErr; ?>
 			<?php echo $accountNotExistErr; ?>

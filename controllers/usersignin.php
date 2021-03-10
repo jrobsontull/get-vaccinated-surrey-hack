@@ -1,12 +1,12 @@
 <?php
    
     // Database usersdb
-    include('./config/usersdb.php');
+    include('../config/usersdb.php');
 
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
     if(isset($_POST['sign-in'])) {
-        $email_signin        = $_POST['email'];
+        $email_signin        = $_POST['sign-in-email'];
         $password_signin     = $_POST['sign-in-pass'];
 
         // clean data happens in JS 
@@ -53,7 +53,7 @@
                 // Allow only verified user
                 if($is_active == '1') {
                     if($email_signin == $email && $password_signin == $password) {
-                       header("Location: /my-account.php");
+                       header("Location: /my-account");
 
                     $_SESSION['id'] = $id;
                     $_SESSION['firstName'] = $firstName;

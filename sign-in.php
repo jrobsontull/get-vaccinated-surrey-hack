@@ -1,5 +1,3 @@
-<?php include('./controllers/usersignin.php'); ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,9 +53,9 @@
             <div class="form-row">
                 <p>Sign in to update your contact details, change your local vaccination centre or acccept available vaccination slots.</p>
             </div>
-            <form id="sign-in" method="post" action="">
+            <form id="sign-in" method="post" action="controllers/usersignin.php">
                 <div class="form-row form-floating">
-                    <input type="email" class="form-control" aria-describedby="emailHelp" name="email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
+                    <input type="email" class="form-control" aria-describedby="emailHelp" name="sign-in-email" id="floatingEmail" placeholder="name@example.com" onblur="validateEmail(this)">
                     <label for="floatingEmail">Email address</label>
                     <div id="emailHelp" class="form-text">Type a valid email here.</div>
                 </div>
