@@ -52,7 +52,10 @@ if (!isset($_SESSION['id']))
 <body>
 <div class="container-div">
 <!--Header nav-->
-<?php include('./header.php'); ?>
+<nav class="nav-head">
+    <div class="brand-logo"><a href="/"><span class="brand-bold">Get</span>Vaccinated</a></div>
+    <div class="login-link signed-in"><a href="/controllers/usersignout.php" id="button">Sign out</a></div>
+</nav>
 <!--End header nav-->
 <div class="my-account-page">
     <div class="nav-bar">
@@ -74,7 +77,17 @@ if (!isset($_SESSION['id']))
             </form>
         </div>
         <div class="vaccine-centre">
-            <p>settings here</p>
+            <div class="form-row">
+                    <label class="">Vaccination centre</label>
+                    <select class="form-select" name="county" aria-describedby="county-help">
+                        <option selected disabled>Choose your nearest centre</option>
+                        <option>option 1</option>
+                        <option>option 2</option>
+                    </select>
+                    <div id="county-help" class="form-text">
+                        Here you can choose the vaccine centre that you will receive alerts from about available, spare, vaccine.
+                    </div>
+                </div>
         </div>
         <div class="personal">
             <form id="personal-details" method="post" action="controllers/usersettingsupdate.php">
@@ -95,29 +108,92 @@ if (!isset($_SESSION['id']))
                 </div>
                 <div class="form-row">
                     <label>Address</label>
-                    <input type="text" class="form-control" placeholder="Street address" name="addressl1" value ="<?php echo $_SESSION['addressl1'];?>">
-                    <input type="text" class="form-control" name="addressl2" placeholder="Apt, building, etc" value ="<?php echo $_SESSION['addressl2'];?>">
-                    <input type="text" class="form-control" placeholder="City" name="addressCity" value ="<?php echo $_SESSION['addressCity'];?>">
-                    <select type="text" name="addressCounty" class="form-control" value ="<?php echo $_SESSION['addressCounty'];?>">
-                        <option>County</option>
-                    </select>
+                    <input type="text" class="form-control" placeholder="Street address" name="addressl1" value ="<?php echo $_SESSION['addressl1'];?>" aria-describedby="line-1">
+                    <div id="line-1" class="form-text">
+                        Street address
+                    </div>
                 </div>
-                <input type="text" class="form-control" placeholder="Country" name="addressCountry" value ="<?php echo $_SESSION['addressCountry'];?>">
-                <label>Mobile</label>
-                <input type="text" class="form-control" name="phone" value="<?php echo $_SESSION['phone'];?>">
-                <label>Alerts</label>
-                <input type="checkbox" class="form-check-input" id="emailAlert">
-                <label class="form-check-label" for="emailAlert">Email</label>
-                <input type="checkbox" class="form-check-input" id="textAlert">
-                <label class="form-check-label" for="textAlert">Text message</label>
-                <button type="submit" name="save-changes"class="btn btn-outline-primary">Save changes</button>
+                <div class="form-row">
+                    <input type="text" class="form-control" name="addressl2" placeholder="Apt, building, etc" value ="<?php echo $_SESSION['addressl2'];?>" aria-describedby="line-2">
+                    <div id="line-2" class="form-text">
+                        Apartment, suite , unit, building, floor, etc.
+                    </div>
+                </div>
+                <div class="form-row no-wrap">
+                    <div class="form-col2">
+                        <input type="text" class="form-control" placeholder="City" name="addressCity" value ="<?php echo $_SESSION['addressCity'];?>" aria-describedby="city-help" onblur="validateLostFocus(this)">
+                        <div id="city-help" class="form-text">
+                            City
+                        </div>
+                    </div>
+                    <div class="form-col2">
+                        <select type="text" name="addressCounty" class="form-control" value ="<?php echo $_SESSION['addressCounty'];?>" aria-describedby="county-help">
+                            <?php include('./assets/html/counties.php'); ?>
+                        </select>
+                        <div id="county-help" class="form-text">
+                            County
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row no-wrap">
+                    <div class="form-col2">
+                        <input type="text" class="form-control" placeholder="Country" name="addressCountry" value ="postcode here" aria-describedby="postcode-help">
+                        <div id="postcode-help" class="form-text">
+                            Postcode
+                        </div>
+                    </div>
+                    <div class="form-col2">
+                        <input type="text" class="form-control" placeholder="Country" name="addressCountry" value ="<?php echo $_SESSION['addressCountry'];?>" aria-describedby="country-help">
+                        <div id="country-help" class="form-text">
+                            Country
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row form-line-break"></div>
+                <div class="form-row">
+                    <label>Mobile</label>
+                    <input type="text" class="form-control" name="phone" value="<?php echo $_SESSION['phone'];?>">
+                </div>
+                <div class="form-row">
+                    <label class="">Birth date</label>
+                    <input type="date" name="dob" class="form-control" id="dob" disabled>
+                </div>
+                <div class="form-row form-line-break"></div>
+                <div class="form-row">
+                    <label>How do you want to be notified about available COVID vaccine?</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" class="form-check-input" id="emailAlert">
+                    <label class="form-check-label" for="emailAlert">Email</label>
+                </div>
+                <div class="form-row">
+                    <input type="checkbox" class="form-check-input" id="textAlert">
+                    <label class="form-check-label" for="textAlert">Text message</label>
+                </div>
+                <div class="form-row form-line-break"></div>
+                <div class="form-row">
+                    <p>Once you've finished making changes, click this button to update your details.</p>
+                </div>
+                <div class="form-row center-row-item">
+                    <button type="submit" name="save-changes"class="btn btn-outline-primary btn-block">Save changes</button>
+                </div>
             </form>
-            <form name="delete" method="post" action="" onsumbit="">
-                <button type="submit" class="btn btn-outline-danger">Delete account</button>
+            <div class="form-row form-line-break"></div>
+            <div class="form-row">
+                <p>Use the button below to delete your account. To continue using our service, you will have to re-register.</p>
+            </div>
+            <form name="delete" method="post" action="" onsumbit="confirmDelete()">
+                <div class="form-row center-row-item">
+                        <button type="submit" class="btn btn-outline-danger btn-block">Delete account</button>
+                </div>
             </form>
         </div>
         <div class="change-password">
             <form name="change-pass" method="post" action="" onsumbit="">
+                <div class="form-row">
+                    <label>Current password</label>
+                    <input name="current-pass" type="password" class="form-control">
+                </div>
                 <div class="form-row">
                     <label>New password</label>
                     <input name="new-pass-1" type="password" class="form-control">

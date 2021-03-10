@@ -5,7 +5,7 @@
 .my-account-page {
 	display: flex;
 	flex-direction: row;
-	height: calc(100% - 60px);
+	height: 100%;
 }
 
 .nav-bar {

@@ -27,3 +27,7 @@ function navigate(nav_to_bar) {
 		}
 	});
 }
+
+function confirmDelete() {
+	return confirm("Are you sure you want to delete your account?");
+}
